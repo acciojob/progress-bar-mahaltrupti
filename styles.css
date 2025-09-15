@@ -1,1 +1,90 @@
 /*  your css code here. If applicable */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 400px;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  background: #d3d3d3;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress {
+  position: absolute;
+  background: #3498db;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.3s ease;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.circle.active {
+  border-color: #3498db;
+  background: #3498db;
+  color: #fff;
+  font-weight: bold;
+}
+
+.buttons button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buttons button:disabled {
+  background: #d3d3d3;
+  cursor: not-allowed;
+}
+
+.buttons button:hover:not(:disabled) {
+  background: #2980b9;
+}
